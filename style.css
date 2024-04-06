@@ -1,0 +1,225 @@
+/* 메인 컬러 #07913a */
+/* 어두운 회색 #393e3c */
+
+
+@font-face {
+  font-family: 'BookkMyungjo-Bd';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+a {
+  color: #393e3c;
+  text-decoration: none;
+}
+
+/* 헤더 공간 */
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  position: fixed;
+  /* z축(깊이)를 기준으로 
+  화면 앞으로 나오게하거나 뒤로가게한다 */
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.navbar .log {
+  background-image: url(logo.png);
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+}
+.nav .menu {
+  list-style: none;
+  display: flex;
+}
+.nav a {
+  font-family: 'BookkMyungjo-Bd';
+  padding: 0px 15px;
+}
+.nav a:hover {
+  color: #07913a;
+}
+
+
+/* 전체 섹션에 대한 디자인 */
+section {
+  height: 100vh;
+  /* border를 이용해서 가이드작성 - 디자인후 지우기 */
+}
+
+/* 섹션1 - 배경사진과 글자 위치 */
+.s1 {
+    background-image: url(main.jpeg);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.s1 .content1 {
+  position: relative;
+  box-sizing: border-box;
+  width: 1000px;
+  padding: 0 50px;
+  margin: auto;
+
+}
+/* 글자를 조금 띄우고, 글자 색상 변경 */
+.word {
+    font-size: 1.5em;
+    color: #fbfcfc;
+    font-family: 'BookkMyungjo-Bd';
+}
+
+.btn {
+  position: absolute;
+  right: 50px;
+  background-color: transparent;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: #fbfcfc solid 1px;
+  color: #fbfcfc;
+}
+.btn:hover {
+  background-color: #07913a;
+  color: #fbfcfc;
+  border :  transparent solid 1px;
+  transition: all 0.3s;
+}
+
+
+
+
+/* 섹션2에서 그림 추가 */
+.gallery {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+.box {
+    width: 350px;
+    height: 90vh; /*비율에따라서 바뀌는값*/
+    background-color: gray;
+    /* 마진값을 하나만 넣으면 위,아래, 양옆에 적용
+    마진값을 두개를 넣으면 위아래 / 양옆 으로 각각 적용 */
+    margin: 5px 20px;
+    border-radius: 25px;
+}
+
+.pic1 {
+    width: inherit;
+    height: inherit;
+    background-image: url(2.jpeg);
+    background-size: cover;
+    background-position: right;
+    transition: all 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic2 {
+    width: inherit;
+    height: inherit;
+    background-image: url(3.jpeg);
+    background-size: cover;
+    background-position: right;
+    transition: all 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-box {
+  width: 350px;
+  height: 90vh; /*비율에따라서 바뀌는값*/
+  background-color: gray;
+  /* 마진값을 하나만 넣으면 위,아래, 양옆에 적용
+  마진값을 두개를 넣으면 위아래 / 양옆 으로 각각 적용 */
+  margin: 5px 10px;
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  /* 글자를 이동하기 위해, 작성 */
+  position: relative;
+}
+
+.pic3 {
+    /* 부모와 같은 크기를 갖는다 */
+    width: inherit;
+    height: inherit;
+
+    background-image: url(4.jpeg);
+    /* 이미지의 크기를 맞춘다 */
+    background-size: cover;
+    /* 이미지의 위치를 이동한다 */
+    background-position: right;
+    transition: all 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pic3:hover, .pic1:hover, .pic2:hover {
+  filter: blur(5px);
+  transform: scale(1.1);
+}
+.word2 {
+  position: absolute;
+  top: 50%;
+  color: white;
+  /* inhert는 부모의 값을 고정해서 들고오지만
+  100%는 바뀌는 부모의 값을 가져온다 */
+  width: 100%;
+  text-align: center;
+}
+
+/* 푸터에 대한 디자인 */
+footer {
+  height: 200px;
+  background-color: #393e3c;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* 모바일 크기일 때 보여줄 디자인 */
+@media (max-width:767px) {
+  .gallery {
+    flex-direction: column;
+  }
+  .s2 {
+    /* 자식의 높이만큼 가짐 */
+    height: auto;
+  }
+  .box, .pic-box {
+    width: 90vw;
+    height: 300px;
+  }
+
+}
